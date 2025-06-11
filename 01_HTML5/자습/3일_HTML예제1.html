@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습예제1</title>
+</head>
+
+    <body>
+        <form action="Yeje">
+                다음 <mark><b>내용에 맞게 입력</b></mark> 하시오<br> <!--img자동완성 질문-->
+                전공 분야를 입력하세요. 
+                <select name="program">
+                    <option value="soft">소프트웨어</option>
+                    <option value="hard">하드웨어</option>
+                    <option value="under">언더웨어</option>
+                    <option value="star">이거중요하니까웨어</option>
+                    <option value="nob">해당없음</option>
+                </select>
+                <br>
+                이름 <input type="text" required> <br>
+                아이디 <input type="text" required> <br>
+                비밀번호 <input type="text" required> <br>
+                
+                <fieldset>
+                    <legend>성별조사</legend>
+                    <label for="Female">여성</label>
+                    <input type="radio" name="gender" id="Female" value="Female">
+                    <label for="male">남성</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                </fieldset>
+
+                <fieldset>
+                    <legend>취미 조사</legend>
+                    <label for="book">책읽기</label>
+                    <input type="checkbox" name="hobby" id="book" value="book">
+                    <label for="study">공부하기</label>
+                    <input type="checkbox" name="hobby" id="study" value="study">
+                    <label for="booktudy">책 읽으며 공부하기</label>
+                    <input type="checkbox" name="hobby" id="booktudy" value="booktudy">
+                    <label for="computer">컴퓨터</label>
+                    <input type="checkbox" name="hobby" id="computer" value="computer">
+                </fieldset>
+
+                <fieldset>
+                    <legend>하고 싶은 말</legend>
+                    <textarea name="holse" cols="50" rows="7"></textarea>
+                </fieldset>
+                
+                <input type="submit" value="완료">
+                <input type="reset" value="다시작성">
+        </form> 
+    </body>
+</html>
