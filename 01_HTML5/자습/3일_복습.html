@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일복습</title>
+</head>
+    <body>
+        <form action="pizza">
+        고객명 : <input type="text" required> <br>
+        전화번호 : <input type="number" placeholder="'-'는 제외하고 기입하시오" required> <br>
+        E-mail : <input type="text"> <br>
+
+        피자선택 : 
+        <select name="pizza" required>
+            <option value="피자선택">피자선택</option>
+            <option value="cheeze">치즈피자</option>
+            <option value="meat">불고기피자</option>
+            <option value="hawaian">하와이안피자</option>
+            <option value="zooream">주름피자</option>
+            <option value="smoking">담배피자</option>
+        </select>
+
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" name="pizza" id="S" value="S">
+            <label for="S">Small</label> <br>
+            <input type="radio" name="pizza" id="M" value="M">
+            <label for="M">Medium</label> <br>
+            <input type="radio" name="pizza" id="L" value="L">
+            <label for="L">Large</label> <br>
+            <sub style="color: red;">*다중선택 불가능</sub>
+        </fieldset>
+        
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name="topping" id="bac" value="bac">
+            <label for="bac">베이컨</label> <br>
+            <input type="checkbox" name="topping" id="chz" value="chz">
+            <label for="chz">치즈</label> <br>
+            <input type="checkbox" name="topping" id="uni" value="uni">
+            <label for="uni">양파</label> <br>
+            <input type="checkbox" name="topping" id="mus" value="mus">
+            <label for="mus">버섯</label> <br>
+            <sub style="color: gray;">*중복선택 가능</sub>
+        </fieldset>
+        </form>
+        
+        <form>
+        희망 배송 시간 :
+        <input type="time"> <br><br>
+        배송시 요청사항 : <br>
+        <textarea name="quik" cols="30" rows="6" placeholder="요청사항을 작성해주세요"></textarea> <br>
+        <input type="submit" value="제출하기">
+
+        <hr><br>
+        <fieldset>
+            <fieldset>
+                <legend>납품자 정보</legend>
+                <ol>
+                    <li>납품자 명 :</li>
+                        <input type="text"> <br>
+                    <li>email :</li>
+                        <input type="text" placeholder="---@---.--"> <br>
+                    <li>홈페이지 :</li>
+                        <input type="text" value="http://"> <br>
+                    <li>지역 :</li>
+                        <select name="jiyeok">
+                            <option value="sU">서울</option>
+                            <option value="bS">부산</option>
+                            <option value="uS">울산</option>
+                            <option value="jJ">제주</option>
+                            <option value="kK">경기</option>
+                        </select>  
+                </ol>
+            </fieldset>
+
+            <fieldset>
+                <legend>납품 정보</legend>
+                <ul>
+                    <li>상품명 : </li>
+                        <input type="text">
+                    <li>납품수량 :</li>
+                        <input type="number" placeholder="최소 100" min="100">
+                    <li>납품등급 :</li>
+                        <input type="range">
+                    <li>기타사항 : </li>
+                        <textarea cols="23" rows="6"></textarea>
+                </ul>
+            </fieldset>
+                <input type="submit" value="send message">
+        </fieldset>
+        </form>
+
+        <hr><br>
+
+        <form method="post">
+        <h1>회원가입</h1>
+            <fieldset>
+                <legend>필수 입력 사항</legend>
+                    <b>ID</b> <input type="text" placeholder="아이디 10글자 이내" min="10">
+                        <button>중복 확인</button> <br>
+                    <b>비밀번호</b> <input type="password" placeholder="영문,숫자,특수문자 포함 8자 이상"> <br>
+                    <b>비밀번호 확인</b> <input type="password"> <br>
+                    <b>Email</b> <input type="text">
+                        <select>
+                            <option value="직접">직접입력</option>
+                            <option value="na">naver.com</option>
+                            <option value="go">google.com</option>
+                            <option value="da">daum.net</option>
+                        </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend>추가정보</legend>
+                프로필 사진 <input type="file"> <br>
+                성별 :
+                    <input type="radio" name="gender" id="male" value="M">
+                    <label for="male">남자</label>
+                    <input type="radio" name="gender" id="Female" value="F">
+                    <label for="Female">여자</label> <br>
+                생년월일 : <input type="date"> <br>
+                취미 <br>
+                <input type="checkbox" name="hobby" id="bas" value="bas">
+                <label for="bas">야구</label>
+                <input type="checkbox" name="hobby" id="bak" value="bak">
+                <label for="bak"></label>
+                <input type="checkbox" name="" id="" value="">
+                <label for=""></label> <br>
+                <input type="checkbox" name="" id="" value="">
+                <label for=""></label>
+                <input type="checkbox" name="" id="" value="">
+                <label for=""></label> <br>
+                <input type="checkbox" name="" id="" value="">
+                <label for=""></label>
+                    <input type="text">
+                <sub style="color: gray;">중복체크 가능</sub>
+            </fieldset>
+
+        </form>
+    </body>
+</html>

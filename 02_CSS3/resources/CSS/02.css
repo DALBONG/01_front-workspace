@@ -1,0 +1,80 @@
+/*css의 확장자는 .css*/
+/*.css파일은 style태그로 감싸져있다 생각하면 됨. */
+/* 외부스타일 방식 : .html파일과.css파일을 연결해야 연동이 됨 
+    - head속성 내 link태그 후 href로 경로선택하여 파일 지정 */
+
+/* 1. 속성선택자 */
+
+/* div 요소들 중 name속성값이 name1과 '일치'하는 요소 */
+/* div[name=name1]{background-color: orangered;} */
+
+/* div 요소들 중 name속성값이 name1이 (단어로서)'포함~'되어 있는 요소 */
+/* div[name~=name1]{background-color: yellow;} */
+
+/* div 요소들 중 class속성값이 class라는 글자로 '시작'되는 요소 
+    (-로 구분, 단어로서)*/
+/* div[class|=class]{background-color: cyan;} */
+
+/* div요소들 name속성 값이 na로 '시작'되는 요소 */
+/* div[name^=na]{background-color: skyblue;} *
+
+
+/* div요소들 중 class속성 값이 ss로 '끝'나는 요소 */
+/* div[class$=ss]{color: blueviolet;} */
+
+
+/* div요소들 중 class속성 값이 i가 '포함'되어있는 요소 */
+/* div[class*=i]{background-color:rgb(255, 225, 207);} */
+
+
+
+/* class속성 값이 div-class인 요소들 중 name 속성값에 name3가 포함되어 있는 요소 찾아 배경 핑크로 바꾸기  */
+/* .div-class[name~=name3]{background-color: pink;} */
+  /* ㄴ *먼저 어떤 선택자를 사용해야 하는지 확인! */
+
+
+  
+/*2.자손 선택자와 후선 선택자 */
+/* a>b : a요소의 자손들 중, b요소만 선택 */
+/* #test1>h4{background-color: orangered;} */
+
+
+/* a b : a요소의 후손들 중, b요소만 선택 */
+/* #test1 li{background-color: rgb(206, 255, 255);} */
+
+
+/*3.동위 선택자 */
+/* #test2+div{background-color: salmon;}
+#test2+ul{background-color: rebeccapurple;} */
+    /* 이것은 제대로 작동x, 바로 뒤가 아니기 때문 */
+
+
+/* #test2~div{background-color: deepskyblue;} */
+
+
+
+
+
+/*4. 반응 선택자 */
+.area{background-color: beige; width: 100px; height: 100px;
+    cursor: pointer;}
+
+/* #active-test:active{background-color: chocolate; color: darkmagenta;} */
+/* #hover-test:hover{background-color: maroon; color: white;} */
+
+
+
+
+/*5.상태 선택자 */
+input[type=checkbox]:checked{width: 20px; height: 20px;}
+input[type=checkbox]:checked+label{font-size: 20px;}
+
+input[name^=user]:focus{background-color: peru;}
+
+
+button:enabled{background-color: powderblue;}
+
+button:disabled{background-color: teal;}
+
+
+h2{color: red;}
