@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트관련스타일</title>
+
+    <style>
+        #c{color: rgb(0, 255, 170);
+            color: #ff8400;
+            color: rgb(111, 222, 077);  
+                /* rgb각 값의 최대는 255 */
+            color: rgba(127, 80, 67, 0.5);
+            color: hsl(200, 40%, 40%)
+                    /* 색상값(~360), 채도(%), 명도(%) */}
+
+            
+        #ts1 {text-decoration: underline;}
+        #ts2{text-decoration: line-through;}
+        #ts3{text-decoration: overline;}
+        #ts4{text-decoration: none; color: black;}
+
+        #tt1{text-transform: uppercase;}
+        #tt2{text-transform: lowercase;}
+        #tt3{text-transform: capitalize;}
+
+        .shadow{font-size: 25px; font-weight: 700;}
+        #td1{color: orangered; text-shadow: 5px 5px;
+            text-shadow: 5px -5px 5px;}
+            /* 번짐,색상 생략시 기본적으로 본래스타일과 같은 그림자 생김 */
+        #td2{color: white; text-shadow: 0px 0px 10px yellowgreen;}
+        #td3{text-shadow: 0px 0px 5px gray, 0px -5px 4px yellow,
+            0px -10px 8px orange, 0px -15px 15px orangered,
+            0px -22px 20px red;}
+
+    </style>
+
+</head>
+
+    <body>
+        <h1>1.텍스트 관련 스타일(text)</h1>
+            <h3>color : 텍스트 색상</h3>
+            <pre id="c">
+선택자{color:색상명| 16진수 | rgb(x,x,x)| rgba(+투명도)| hsla(+투명도)}
+            </pre>
+            
+            <hr>
+            <h3>text-decoration <br>
+                : 텍스트에 줄을 긋거나 없앨 때 사용</h3>
+            <pre>
+text-decoration : none(기본)| underline | overline | line-through
+            </pre>
+
+            <ul>
+                <li id="ts1">텍스트 아래 줄 긋기</li>
+                <li id="ts2">텍스트 중간에 줄 긋기</li>
+                <li id="ts3">텍스트 위에 줄 긋기</li>
+            </ul>
+
+            <a id="ts4" href="https://www.naver.com/" target="_blank">초록창으로</a>
+
+            <hr>
+            <h3>text-transform : 영문텍스트 대소문자 변환</h3>
+            <pre>
+선택자{text-transform:uppercase | lowercase | capitalize} 
+            </pre>
+
+            <ol type="a" reversed>
+                <li id="tt1">uppercase: 영문자 > 모두 대문자</li>
+                <li id="tt2">LowerCase: 영문자 > 모두 소문자</li>
+                <li id="tt3">capitalize: 영문자의 첫자만 대문자</li>
+            </ol>
+
+            <hr>
+            <h3>text-shadow: 그림자효과</h3>
+            <pre>
+선택자{텍스트-섀도우: 가로거리x 세로거리y [번짐정도] [색상]}
+            </pre>
+
+            <div>
+                <span class="shadow" id="td1">HTML</span><br><br>
+                <span class="shadow" id="td2">HTML</span><br><br>
+                <span class="shadow" id="td3">HTML</span>
+            </div>
+
+            <hr>
+            
+            <h3>text-align: 텍스트 정렬</h3>
+            <pre>
+선택자{text-align: left(기본) | justify | right | center}
+            </pre>
+
+            <h4 style="text-align: left;">왼쪽정렬(기본)</h4>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsam iste voluptas iure beatae laboriosam veritatis harum alias at expedita velit explicabo aliquam a consequatur, impedit porro quaerat ea? Excepturi.
+            </p>
+
+            <h4 style="text-align: justify;">양쪽 정렬justify</h4>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quo placeat fuga molestias iste laborum voluptatum natus et dolore facilis! Cumque nostrum voluptatum, eum ut soluta quae fuga officiis esse.
+            </p>
+
+            <h4 style="text-align: right;">오른쪽 정렬right</h4>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus porro assumenda nulla consequatur. Minus, iure neque sed, harum ea et vitae molestiae eveniet placeat atque sit natus animi dignissimos eius!
+            </p>
+
+            <h4 style="text-align: center;">가운데 정렬center</h4>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, provident. Eum ex perferendis sed officia rerum nemo vel sint beatae nihil. Libero ad et, molestiae odit rerum quae magnam ex.
+            </p>
+            
+            <hr>
+
+            <h3>line-height : 줄 간격 조절할 때 사용</h3>
+            <pre>
+선택자{line-height: normal | px | em | % }
+            </pre>
+
+            <h4>px:고정단위</h4>
+            <p style="line-height: 30px;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla numquam non cumque. Voluptate quidem, blanditiis quae repellat dicta aliquid labore assumenda distinctio dolores quia, facilis ipsam, velit nostrum numquam!
+            </p>
+
+            <h4>em : 가변단위</h4>
+            <p style="line-height: 3em;">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, hic cupiditate ea culpa illo delectus laudantium? Sequi incidunt quasi iusto ullam tempora iure, sunt minus asperiores ea facere, praesentium perferendis!
+            </p>
+
+            <h4>%: 배율단위</h4>
+            <p style="line-height: 200%;">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, eum pariatur. Autem veritatis ex ipsa nobis nam aperiam sapiente facere impedit enim nesciunt? Iste nobis aperiam eum, suscipit minima saepe.
+            </p>
+
+
+    </body>
+</html>
