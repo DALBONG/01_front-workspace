@@ -9,12 +9,14 @@
         .anitest1:checked+div{width: 200px;
                 animation-name: ani;
                 animation-duration: 4s;
-                animation-direction: alternate; /*무한 반복:부드럽게 보임*/
+                animation-direction: alternate; 
+                    /*무한 반복:부드럽게 보임*/
                 animation-iteration-count: infinite;}
                     /*디렉션, 인터랙션은 짝꿍*/
     
         .anitest2:checked+div{
-                animation: ani2 5s infinite alternate; /*단축속성*/
+                animation: ani2 5s infinite alternate; 
+                    /*단축속성*/
         }
         @keyframes ani{
                 from{background-color: green;
