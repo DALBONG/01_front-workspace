@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스선택자2</title>
+
+    <style>
+        .fruits span:first-child{
+            color: red;}
+        .fruits div:first-child{}/*이런 요소는 없음 div가 첫째가 아니기에*/
+
+        .fruits h3:last-child{color: greenyellow;}
+        
+        .fruits *:nth-child(3){color: rgb(255, 168, 168);}
+            /* 가운데 br태그도 있을 시, br태그도 자식으로 인식함*/
+
+        .fruits *:nth-child(3n){color: aquamarine;}
+            /* n은 0부터 시작(zerobased numbering) */
+
+        .fruits *:nth-child(3n+1){font-size: 20px;}
+        .fruits *:nth-child(n+2){text-decoration: underline;}
+
+        .fruits *:not(span){border: 1px solid red;}
+    
+
+    </style>
+
+</head>
+
+
+    <body>
+        <h3>가상클래스선택자2</h3>
+        <p>- 종류: :first-child, :last-child, :nth-child, :not</p>
+
+        <h4>first-child</h4>
+        <p>선택자가 형제 요소중 첫째라면 선택</p>
+        <pre>
+선택자:first-child{스타일속성:값;}
+        </pre>
+
+        <div class="fruits">
+            <span>딸기</span><br>
+            <span>용과</span>
+            <div>사과</div>
+            <p>두리안</p>
+            <h3>키위</h3>
+        </div>
+
+        <hr><br>
+        <h4>last-child</h4>
+        <p>선택자가 형제 요소중 막내라면 선택</p>
+
+        <hr><br>
+        <h4>nth-child(n)</h4>
+        <p>선택자가 형제 요소중 n번째 라면 선택</p>
+
+        <hr><br>
+        <h4>not(요소) : 요소 제외 모두 선택</h4>
+        <p>선택자가 해당요소가 아닌 것만 선택</p>
+        
+        
+        
+    </body>
+</html>

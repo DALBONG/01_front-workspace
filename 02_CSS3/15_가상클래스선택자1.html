@@ -4,10 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가상클래스선택자1</title>
+
+    <style>
+        div{width: 100px; height: 100px; 
+            background-color: rgb(253, 226, 177);
+            transition: 1s;}
+
+        .div-hover:hover{width: 300px; 
+            background-color: rgb(168, 188, 248);}
+        
+        .div-active:active{width: 300px; 
+            background-color: rgb(208, 255, 239);}
+        
+        input:focus{background-color: rgb(255, 171, 141);}
+        .div-focus:focus{background-color: pink;}
+         /* ㄴ div는 focus되는 요소가 아니므로, 작동X  */
+
+        .div-tabindex:focus{background-color: cornflowerblue;}
+
+        
+    </style>
+
 </head>
 
     <body>
+        <h3>가상클래스 선택자1</h3>
+        <p>어떠한 행동을 했을 시 동작하는 개념을 선택하는 선택자<br>      
+            - 종류: :hover, :active, :focus</p>
+
+        <div class="box"></div><br>
+        <input type="text">
+
+        <h4>hover 가상선택자</h4>
+        <p>마우스 커서가 올라가 있는 동안 선택</p>
+        <pre>
+선택자:hover{스타일속성:값;}
+        </pre>
+
+        <div class="div-hover"></div>
+        <br>
+        <hr>
         
+        <h4>active 가상선택자</h4>
+        <p>마우스로 클릭하고 있는 동안 선택</p>
+        <pre>
+선택자:active{스타일속성:값;}
+        </pre>
+
+        <div class="div-active"></div>
+        <br>
+        <hr>
+        
+        <h4>focus 가상선택자</h4>
+        <p>요소가 포커스되면 선택<br>
+            - 포커스 가능 요소 : input, a,a button, label 등...</p>
+
+        <input type="text"><br>
+        <div class="div-focus"></div>
+        <br>
+        <hr>
+        
+        <h3>tabindex</h3>
+        <p>- 키보드 tab키를 활용하여 focus할 수 있는 순서 지정 가능<br>
+            - focus가 아닌 요소를 focus가 가능한 요소로 만듬</p>
+        <pre>
+tabindex="-1" (-1외에 다른 값을 넣는 것은 논리적 흐름을 방해, 권장X)
+        </pre>
+
+        <div class="div-tabindex" tabindex="-1"></div>
+
 
     </body>
 </html>
