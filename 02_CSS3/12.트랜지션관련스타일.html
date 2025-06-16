@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 관련 스타일</title>
+
+    <style>
+        h1{color: red; background-color: rgb(239, 255, 207);}
+        h2{color: white; background-color: brown;}
+
+        img{margin-left: 200px; width: 200px; height: 200px;}
+        .translate:hover{transform: translate(200px, 200px);}
+        .transX:active{transform: translateX(300px);}
+        .transY:active{transform: translateY(300px);}
+        .transZ:active{transform: perspective(200px) translateZ(100px);}
+            /* perspective : 원근법 적용 */
+
+        .scale:hover{transform: scale(1.2);}
+        .scaleX:hover{transform: scaleX(1.2);}
+        .scaleY:hover{transform: scaleY(1.2);}
+
+        .skew:hover{transform: skew(60deg);} /*deg: 각도*/
+
+        .transitiondiv{width: 100px; height: 100px;
+                    border: 1px solid red;
+                    transition-property: all;
+                    transition-duration: 5s;}
+
+        input:checked~.transition{background-color: lime; 
+                    transform: translateX(300px);}
+    </style>
+
+</head>
+
+    <body>
+        <h1>트랜지션 관련 스타일</h1>
+        <h2>1. 변형</h2>
+        <p>태그가 특정 동작(마우스 클릭/호버)에 의해 변형되는 것</p>
+        <hr>
+        <br>
+        
+        <h3>태그 이동</h3>
+        <p>translate 함수 이용하여 설정태그가 특정 위치로 이동</p>
+        <img class="translate" src="resources/image/flower1.PNG"><br>
+        <img class="transX" src="resources/image/flower1.PNG"><br>
+        <img class="transY" src="resources/image/flower1.PNG"><br>
+        <img class="transZ" src="resources/image/flower1.PNG"><br>
+
+        <hr>
+        <h3>태그확대</h3>
+        <img class="scale" src="resources/image/flower2.PNG"><br>
+        <img class="scaleX" src="resources/image/flower2.PNG"><br>
+        <img class="scaleY" src="resources/image/flower2.PNG">
+        <br>
+        <hr>
+
+        <h3>skew(스크류, 찌그러뜨림)</h3>
+        <img class="skew" src="resources/image/flower3.PNG"><br>
+        <hr>
+
+        <h3>트랜지션 적용하기</h3>
+        <p>태그가 변형속성에 의해 변현될 때, 부드럽게 변형할 수 있게 하는 속성</p>
+        transition-property : 전환효과를 사용할 속성 이름 (all, 전환효과 속성 이름)
+        transition-duration : 전환효과의 지속시간 : 
+        transition-timing-function : ease(느리게-빠르게-느리게)
+                                    linear(일정하게)
+        transition : 한번에 모든 속성 지정 (속성명, 시간, 타이밍) <br>
+
+        <input type="checkbox">
+        <div class="transitiondiv transition transi"></div>
+        <div class="transitiondiv transition transi" 
+            style="transition-timing-function: linear;"></div>
+        <div class="transitiondiv transition transi"
+            style="transition-timing-function: ease;"></div>
+        <div class="transitiondiv transition transi"
+            style="transition-timing-function: ease-in;"></div>
+    </body>
+</html>
