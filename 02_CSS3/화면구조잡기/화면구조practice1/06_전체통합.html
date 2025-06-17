@@ -18,38 +18,115 @@
         #header>div{height: 100%;
             float: left;}
         #header_1, #header_3{width: 20%;}
-        #header_2{width: 60%;}
+        #header_2{width: 60%;
+            background-image: url("실습_v1/image/mainlogo.jpg");
+            background-position: center;
+            background-repeat: no-repeat;}
+        #header_1{height: 20%;}
+        #header_1{
+            background-image: url("실습_v1/image/logo.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;}
 
         #content>div{height: 100%;
             float: left;}
-        #content_1{width: 15%;}
-        #content_2, #content_3{width: 30%;}
-        #content_4{width: 25%;}
+        #content1{width: 15%;
+            background-image: url("실습_v1/image/left_img.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;}
+        #content2, #content3{width: 30%;}
+        #content4{width: 25%;}
         
-        #content_2>div{width: 100%;}
-        #content_2_1{height: 50%;}
-        #content_2_2{height: 50%;}
+        #content2>div{width: 100%;}
+        #content2_1{height: 50%;
+            background-image: url("");}
+        #content2_2{height: 50%;}
 
-        #content_3>div{width: 100%;}
-        #content_3_1{height: 50%;}
-        #content_3_2{height: 50%;}
+        #content3>div{width: 100%;}
+        #content3_1{height: 50%;}
+        #content3_2{height: 50%;}
 
-        #content_4>div{width: 100%;}
-        #content_4_1{height: 20%;}
-        #content_4_2{height: 50%;}
-        #content_4_3{height: 30%;}
+        #content4>div{width: 100%;}
+        #content4_1{height: 20%;}
+        #content4_2{height: 50%;
+            background-image: url("실습_v1/image/right_img.jpg");
+            background-size: contain;}
+        #content4_3{height: 30%;
+            background-image: url("실습_v1/image/me_chat.jpg");
+            background-size: contain;}
 
-        #content_4_2{width: 100%; height: 100%;}
+        #content2_1>div{width: 100%;}
+        #content2_11{height: 90%;
+            background-image: url("실습_v1/image/main_img1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;}
+        #content2_12{height: 10%;
+            background-color: rgb(11, 194, 11);
+            color: whitesmoke;}
+        #content2_2>div{width: 100%;}
+        #content2_21{height: 90%;
+            background-image: url("실습_v1/image/main_img3.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;}
+        #content2_22{height: 10%;
+            background-color: rgb(11, 194, 11);
+            color: whitesmoke;}
+        #content3_1>div{width: 100%;}
+        #content3_11{height: 90%;
+            background-image: url("실습_v1/image/main_img2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;}
+        #content3_12{height: 10%;
+            background-color: rgb(11, 194, 11);
+            color: whitesmoke;}
+        #content3_2>div{width: 100%;}
+        #content3_21{height: 90%;
+            background-image: url("실습_v1/image/main_img4.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left;}
+        #content3_22{height: 10%;
+            background-color: rgb(11, 194, 11);
+            color: whitesmoke;}
+        
 
         /* footer 영역*/
         #footer>p{width: 100%;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             box-sizing: border-box;
             font-size: 13px;
             color: rgb(73, 70, 70);}
         #p{text-align: center;}
 
-        /* 로그인폼 */
+        /* 네비게이션 영역 */
+        #navigator{background-color: rgb(11, 194, 11);}
+        #navi{list-style-type: none; padding: 0px;
+            margin: 0px; height: 100%;
+            display: flex;
+            justify-content: space-evenly;}
+        #navi>li{float: left;  
+            /* border: 1px solid red; */
+        }
+        #navi a{
+            /* border: 1px solid blue; */
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            font-weight: 400;
+            display: block;
+            width: 100%; height: 100%;
+            line-height: 36px;}
+
+        .p{padding: 0; margin: 0;
+            text-align: center;}
+
+        /* 로그인 폼 */
+
 
         </style>
 </head>
@@ -62,28 +139,55 @@
                 <div id="header_3"></div>
             </div>
 
-            <div id="navigator"></div>
-
+            <div id="navigator">
+            <ul id="navi">
+                <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThtVkDzkuFhWl12EQJAY3MOAKfDIcQeEZmtA&s">Home</a></li>
+                <li><a href="https://mblogthumb-phinf.pstatic.net/MjAxODAxMThfMjk1/MDAxNTE2MjQ5NDkxMDEz.mRBvVYj4yIu7RVjR3zH_7DgA4CEQ4V9ej2sYMbenOewg.VWPN5YlZ4R-_NS3j4LrfWuyPhB12QJDbzrVpQQV5wcog.JPEG.qe4865/16.jpg?type=w800">Profile</a></li>
+                <li><a href="https://i.pinimg.com/736x/86/e8/c9/86e8c92b974b7d21a84a2af1b2650143.jpg">Board</a></li>
+                <li><a href="https://cdn.mania.kr/nbamania/file/2412/freetalk_6534453_20241214171657_9e682d52d7b1b349.jpg">Contact</a></li>
+            </ul>
+            </div>
+            
             <div id="content">
-                <div id="content_1"></div>
+                <div id="content1"></div>
 
-                <div id="content_2">
-                    <div id="content_2_1"></div>
-                    <div id="content_2_2"></div>
+                <div id="content2">
+                    <div id="content2_1">
+                        <div id="content2_11"></div>
+                        <div id="content2_12">
+                            <p class="p">나무를 심는 사람들</p>
+                        </div>
+                    </div>
+                    <div id="content2_2">
+                        <div id="content2_21"></div>
+                        <div id="content2_22">
+                            <p class="p">설악산을 살리는 길</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="content_3">
-                    <div id="content_3_1"></div>
-                    <div id="content_3_2"></div>
+                <div id="content3">
+                    <div id="content3_1">
+                        <div id="content3_11"></div>
+                        <div id="content3_12">
+                            <p class="p">아이들에게 녹색 미래를...</p>
+                        </div>
+                    </div>
+                    <div id="content3_2">
+                        <div id="content3_21"></div>
+                        <div id="content3_22">
+                            <p class="p">사라지는 북극곰들</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="content_4">
-                    <div id="content_4_1">
+                <div id="content4">
+                    <div id="content4_1">
                     <!-- 로그인 폼 -->
 
                     </div>
-                    <div id="content_4_2"></div>
-                    <div id="content_4_3"></div>
+                    <div id="content4_2"></div>
+                    <div id="content4_3"></div>
                 </div>
             </div>
 
