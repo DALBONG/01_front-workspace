@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역관련속성</title>
+
+    <style>
+        h3{color: red;}
+
+        .test{
+            /* border영역 */
+            border: 10px solid rgb(198, 198, 255);
+            /* content영역 : width,height는 컨텐츠 영역까지만 */
+            width: 300px; height: 130px;
+            /* padding영역 */
+            padding: 10px;
+            /* 현재 요소의 전체 크기 : 가로 340, 세로 170 */
+            /* box-sizing: 내가 지정한 가로,세로 길이를 어느 영역까지 범위로 할 것인지 지정 가능 */
+            box-sizing: content-box /*기본값*/
+            box-sizing: border-box /*border까지 전부 다*/}
+
+        .wrap{border: 5px solid rgb(255, 197, 197);
+            width: 400px; height: 200px;} /*여기까지 쓰면 콘텐츠 크기*/
+        .test1, .test2{border: 5px solid rgb(200, 200, 255);
+            /*공통 속성 : 가로길이가 부모것의 100%*/
+            width: 100%; /*옆으로 삐져나옴*/
+            box-sizing: border-box;}
+        .test1{height: 40%;}
+        .test2{height: 60%;}
+
+        
+        .test3, .test4{border: 5px solid rgb(223, 255, 176);
+            box-sizing: border-box; /*공통속성: 세로길이 부모것 100%*/
+            height: 100%;
+            float: left;}
+            /*div는 인라인 요소로 블럭라인이 될 수 있도록 처리 해줘야 함*/
+        .test3{width: 30%;}
+        .test4{width: 70%;}
+
+    </style>
+
+
+</head>
+
+<body>
+    <h1>영역 관련 속성</h1>
+    <div class="test">
+        1_content 영역 : 요소내의 내용물 영역<br>
+        2_border 영역 : <u>요소 내</u>의 테두리 영역<br>
+        3_padding 영역 : 컨텐츠와 보더 사이의 영역(여백) <br>
+        4_margine 영역 : 요소의 바깥쪽 영역
+    </div>
+
+    <h2>div안에 또 다른 여러개의 div를 넣는 연습</h2>
+    <h3>1. 상하 2등분 하기</h3>
+    <div class="wrap">
+        <div class="test1"></div>
+        <div class="test2"></div>
+    </div>
+
+    <h3>2. 좌우 2등분 하기</h3>
+    <div class="wrap">
+        <div class="test3"></div>
+        <div class="test4"></div>
+    </div>
+    
+</body>
+
+</html>

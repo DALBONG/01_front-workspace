@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹문서구조</title>
+
+    <style>
+        div{border: 1px solid rgb(255, 205, 205);
+            box-sizing: border-box;}
+
+        /*1. 전체를 감싸는 div부터 */
+        .wrap{width: 1000px; 
+            height: 800px;
+            margin: auto;}
+
+        /*2. 공통적 스타일 찾기 : 가로길이가 부모요소의 100%*/
+        /*#header, #content, #footer{이렇게 할 수 있지만!}*/
+        .wrap>div{ /*자식 선택자로, 후손은 선택 X */
+            width: 100%;}
+        #header, #footer{height: 20%;}
+        #content{height: 60%;}
+
+        #content>div{height: 100%;}
+
+    </style>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <div id="header"></div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+</body>
+</html>
