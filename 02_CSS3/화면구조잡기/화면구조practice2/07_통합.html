@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹문서 구조</title>
+    <style>
+    div{border: 1px solid rgb(139, 139, 255);
+        box-sizing: border-box;}
+    .wrap{width: 1000px; height: 800px;
+        margin: auto;}
+
+    .wrap>div{width: 100%;} /*15 5 60 20*/
+    #header{height: 15%;}
+    #navigator{height: 5%;}
+    #content{height: 60%;}
+    #footer{height: 20%;}
+
+    #header>div{height: 100%;
+        float: left;}
+    #header1, #header3{width: 28%;}
+    #header1{background-image: url("../실습_v2/image/logo.PNG");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;}
+    #header2{width: 44%;}
+        #header2{position: relative;}
+        #search_form{width: 100%; height: 30%;
+            margin: auto; position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;}
+        #search_form>div{height: 100%; float: left;}
+        #search_text{width: 80%;
+            padding: 0;}
+        #search_btn{width: 20%;}
+        #search_form input{width: 100%; height: 100%;}
+        #bI{background-image: url("../실습_v2/image/search.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;}
+    /* #navigater */
+        #navi{list-style-type: none; padding: 0;
+             margin: 0; height: 100%; width: 104%;}
+        #navi>li{float: left;
+            border-radius: 0;
+            border: 1px solid gold;
+            width: 19%; height: 100%;
+            text-align: center;}
+        #navi a{border: 1px solid red;
+            text-decoration: none;
+            color: rgb(97, 97, 97);
+            font-size: 20px;
+            font-weight: 500;
+            width: 100%; height: 100%;
+            display: block;
+            line-height: 35px;
+            border-spacing: 50px;}
+
+    #content>div{height: 100%;
+        float: left;}
+    #content1{width: 75%;}
+    #content1>*{width: 100%;}
+    #content1_1{height: 30%;
+        background-image: url("../실습_v2/image/banner.PNG");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;}
+        /* content1_2>siren>siren_text, siren_new>a */
+    #content1_2{height: 15%;}
+    #content1_3{height: 55%;
+        background-image: url("../실습_v2/image/car.PNG");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;}
+    #content2{width: 25%;}
+    #content2>*{width: 100%;}
+    #content2_1{height: 30%;}
+        #login_form{width: 100%; height: 100%;}
+        #login_form_input, #login_input_ect{width: 100%;}
+        #login_form_input{height: 70%;}
+        #login_input_ect{height: 30%;}
+        #login_form_input>div{height: 100%; float: left;}
+        #login_input_id_pwd{width: 75%;}
+        #login_input_btn{width: 25%;}
+        #login_input_ect{height: 30%; text-align: center;}
+        #login_input_ect>a{text-decoration: none; color: rgba(54, 47, 47, 0.685);
+            font-size: 15px; margin: 2%; vertical-align: middle;}
+        #login_input_id_pwd>input{box-sizing: border-box; width: 100%;height: 50%;}
+        #login_input_btn>input{width: 100%; height:100%;}
+        #login_form_input input{font-size: 15px;}
+    #content2_2{height: 70%;
+        background-image: url("../실습_v2/image/shopping.PNG");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;}
+
+
+    #footer{width:100%}
+    #footer1{height: 30%}
+    #footer2{height: 70%;}
+        #footer>div{width: 100%;}
+        #footer1{height: 25%;}
+        #footer1>a{
+            text-decoration: none;
+            color: rgb(44, 27, 27);
+            font-weight: 500;
+            margin: 15px;
+            vertical-align: middle;}
+        #footer2{height: 75%;}
+        #footer2>p{
+            box-sizing: border-box;
+            width: 100%; margin: 0;
+            color: rgb(92, 89, 89);
+            border: 1px solid rgb(176, 176, 255);
+            font-size: 14px;}
+        #p1{height: 70%; padding: 5px 15px;}
+        #p2{height: 30%; text-align: center;}
+
+    </style>
+
+</head>
+
+    <body>
+        <div class="wrap">
+            <div id="header">
+                <div id="header1"></div>
+                <div id="header2">
+                    <form action="" id="search_form">
+                        <div id="search_text">
+                            <input type="text" name="search" id="text">
+                        </div>
+                        <div id="search_btn">
+                            <input type="submit" id="bI" value="">
+                        </div>
+                    </form>                    
+                </div>
+                <div id="header3"></div>
+            </div>
+
+            <div id="navigator">
+                <ul id="navi">
+                    <li><a href="https://media.bunjang.co.kr/images/crop/1040609791_w%7Bres%7D.jpg">교육과정</a></li>
+                    <li><a href="https://mblogthumb-phinf.pstatic.net/MjAxODAxMThfMjk1/MDAxNTE2MjQ5NDkxMDEz.mRBvVYj4yIu7RVjR3zH_7DgA4CEQ4V9ej2sYMbenOewg.VWPN5YlZ4R-_NS3j4LrfWuyPhB12QJDbzrVpQQV5wcog.JPEG.qe4865/16.jpg?type=w800">교육원소개</a></li>
+                    <li><a href="https://mblogthumb-phinf.pstatic.net/MjAxODAxMThfNzEg/MDAxNTE2MjQ5ODE4MjEy.iLPbjW9BLeAjkI1ppclbNdn5kwzTW585Abkz7Qte7c4g.LntCl6JMg0i88zWyCUpQ_bTtcvQuitpFLL29CXgUl0sg.JPEG.qe4865/23.jpg?type=w800">취업지원센터</a></li>
+                    <li><a href="https://img0.yna.co.kr/etc/inner/KR/2016/08/05/AKR20160805139000033_04_i_P4.jpg">산학연계</a></li>
+                    <li><a href="https://i.pinimg.com/736x/d0/10/a7/d010a77574142a658bcefadc017f8894.jpg">상담센터</a></li>
+                </ul>
+            </div>
+
+            <div id="content">
+                <div id="content1">
+                    <div id="content1_1"></div>
+                    <div id="content1_2"></div>
+                    <div id="content1_3"></div>
+                </div>
+                <div id="content2">
+                    <div id="content2_1">
+                        <div id="login_form">
+                            <form id="login_form_input">
+                                <div id="login_input_id_pwd">
+                                    <input type="text" name="uId" placeholder="ID입력" required>
+                                    <input type="password" name="uPd" placeholder="PW입력" required>
+                                </div>
+                                <div id="login_input_btn">
+                                    <input type="submit" value="로그인">
+                                </div>
+                            </form>
+                            <div id="login_input_ect">
+                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoU3L6t1gq1qVzmH-MH52llP72Z-Nq69VGug&s">아이디</a> |
+                                <a href="https://i.ytimg.com/vi/AGQEFVWjOdw/mqdefault.jpg">비밀번호찾기</a> |
+                                <a href="https://evergreenjb.me/files/attach/images/2025/05/27/a1a19f554b7b8639501c0603f625fe01.jpg">회원가입</a>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div id="content2_2"></div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div id="footer1">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFcnNXXb4iE6uefTCZ5-w1udEVM0d_Ak1lFg&s">이용약관</a> |
+                    <a href="https://blog.kakaocdn.net/dn/bm4mcX/btr0n8EwZD7/sEK20LdzU7VrAxw51yUjzK/img.jpg">개인정보취급방침</a> |
+                    <a href="https://api.linkareer.com/community/attachments/156430">인재채용</a> |
+                    <a href="https://mblogthumb-phinf.pstatic.net/MjAyMTExMTlfMjg2/MDAxNjM3MzMyMzczMDc2.VEi3bIKROD7xht83csGyF7XBiopJ4B0S3MgKlsJQhFUg.sHPXOEP52X3-lXXkJ7E9O5Lh_IhN3Jn9T9yPHSUijKgg.JPEG.funnycry/IMG_4783.JPG?type=w800">고객센터</a> |
+                </div>
+                <div id="footer2">
+                    <p id="p1">
+                        강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                        강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                        강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    </p>
+                    <p  id="p2">
+                        Copyright © 1998-2025 KH Information Educational Institute All Right Reserved 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

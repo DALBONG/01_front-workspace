@@ -6,12 +6,49 @@
     <title>로그인 폼</title>
 
     <style>
-        
+        div,form{
+            border: 1px solid green;
+            box-sizing: border-box;}
+        #content4_1{width: 300px; height: 100px;}
+        #login_form{width: 100%; height: 100%;}
+        #login_form_input, #login_input_ect{width: 100%;}
+        #login_form_input{height: 70%;}
+        #login_input_ect{height: 30%;}
+        #login_form_input>div{height: 100%;
+            float: left;}
+        #login_input_id_pwd{width: 70%;}
+        #login_input_btn{width: 30%;}
+        #login_input_ect{height: 30%; text-align: center;}
 
+        #login_input_ect>a{text-decoration: none; color: rgb(77, 75, 75);
+            font-size: 13px; margin: 30px; vertical-align: text-bottom;}
+        #login_input_id_pwd>input{box-sizing: border-box; width: 100%; height: 50%;}
+        #login_input_btn>input{width: 100%; height:100%;}
+
+
+
+
+        
     </style>
 </head>
 
     <body>
-
+        <div id="content4_1">
+            <div id="login_form">
+                <form id="login_form_input">
+                    <div id="login_input_id_pwd">
+                        <input type="text" name="userId" placeholder="ID를 써라" required>
+                        <input type="password" name="userPwd" placeholder="PW를 써라" required>
+                    </div>
+                    <div id="login_input_btn">
+                        <input type="submit" value="로그인">
+                    </div>
+                </form>
+                <div id="login_input_ect">
+                    <a href="https://cdn.ikoreadaily.co.kr/news/photo/201510/211999_107843_2114.JPG">회원가입</a>
+                    <a href="https://mblogthumb-phinf.pstatic.net/MjAyMTA1MDNfMTk4/MDAxNjE5OTY3NjcyNTgx.suWW5W1gZcoIZPACf25L5UXYwLo1tQbC8TKr-LhUlwEg.Mx1Nh8v3SSqw3soH8qsgNiO1Du-ARNaicdqldAxIFuEg.JPEG.chooddingg/IMG_8559.JPG?type=w800">ID/PW 찾기</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
