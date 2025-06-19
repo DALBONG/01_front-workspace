@@ -8,15 +8,197 @@
         .area{border: 1px solid silver;
             width: 300px; height: 100px;}
 
-        h1{color: rgb(255, 46, 46);}
+        h1{color: rgb(255, 86, 86);}
     </style>
 
 </head>
 
     <body>
     <h1>JS에서의 데이터 입/출력</h1>
+        <!-- *window : JS의 내장 객체로, 브라우저의 창이 열릴 때마다
+                        하나씩 만들어지는 객체 
+                (브라우저 창 안에 존재하는 모든 요소들의 최상위 객체로,
+                .div처럼 window를 쓰지 않아도 생략 가능 
+             * document : 웹 문서 마다 하나씩 만들어지는 객체
+                (html문서 내에 정보들을 가지고 있음 )
+        -->
+
+    <h2>1. 데이터를 출력하는 구문</h2>  <!--[ ] 생략 가능-->
+    <p>1_ [window].alert("알람창에 출력할 문구"); <br>
+       2_ console.log("콘솔창에 출력할 문구"); <br>
+       3_ document.write("화면상에 출력할 문구") <br>
+       4_ 선택한 요소.innerHTML | innerText = "요소의 출력 문구";
+    </p>
+
+    <h3>3_ document.write("화면상에 출력할 문구")</h3>
+    <button onclick="documentWrite()">화면에 출력</button>
+
+    <script>
+        function documentWrite(){
+            //document.write("안녕");
+            // document.write("<b>안녕</b><br><h2>달봉아</h2>")
+            //화면상에 출력할 문구에 html태그가 있을 경우 해석해서 시각적 요소로 보여짐
+        var a = "<table border='1'>"
+            a += "<tr>"
+            a += "<td>1</td>"
+            a += "<td>2</td>"
+            a += "</tr>"
+            a += "</table>"
+        document.write(a);}
+    </script>
+    <br>
+    <hr>
+    <h3><mark>4_ 선택한 요소.innerHTML | .innertext="해당 요소에 출력할 문구"</mark></h3>
+    <div class="area" id="area1">
+        JS에서 요소(element)안의 값(콘텐츠)을 가지고 온다거나<br>
+        변경하고자 할 때 <b>innerHTML, innerText</b>속성에 접근
+    </div>
+    <button onclick="tagValue()">확인</button>
+    <script>
+        function tagValue() {
+            //div요소를 가져와서, 그 요소가 가지고있는 값을 확인/변경
+
+            //id로 해당 요소 객체를 가져와서 변수에 담기
+        var divEl = document.getElementById("area1"); 
+            //div가 들어가있음
+        console.log(divEl);
+        console.dir(divEl);
+            //console.dir : 해당 값의 디렉토리 구조를 보고자 할 때 사용.(속성 접근)
+        //선택된 요소의 속성에 접근(.을 통해 접근)
+        console.log(divEl.id); //id: 해당 요소의 아이디 속성
+        console.log(divEl.className); //className : 해당 요소의 클래스 속성
+        console.log(divEl.innerHTML); //요소의 콘텐츠 영역안의 'html태그까지' 다 포함
+        console.log(divEl.innerText); //요소의 콘텐츠 영역안의 '텍스트만' 포함.
+
+        // 해당 요소의 속성값 변경: 속성 접근>대입>변경
+        // divEl.innerHTML = "<b>innerHTML로 속성값 변경함</b>"
+        divEl.innerText = "<b>innerText로 속성값 변경</b>"
+        divEl.style.backgroundColor = "Yellow"
+        divEl.style.color = "red"
+        divEl.style.borderColor = "blue"
+        divEl.style.borderTopColor = "skyblue"
+        }
+    </script>
+    <hr>
+    <h2>2. 데이터를 입력받는 구문(변수에 기록)</h2>
+    <p>1_ 변수 = [window.]confirm("질문내용"); <br>
+       2_ 변수 = [window.]prompt("질문내용"); <br>
+       3_ 변수 = 선택한 요소.속성(id, className 등...) <br>
+       4_ 변수 = 선택한 input요소.value;
+    </p>
+    <br>
+    <h3>1_ window.confirm("질문내용")</h3>
+        <p>confirm함수 호출 시 질문내용과 "확인/취소" 버튼이 알람창 발생 <br>
+            확인버튼 클릭시 true / 취소버튼 클릭시 false로 반환
+        </p> 
+        <button onclick="testConfirm()">클릭</button>
+        <div id="area2"></div>
+        <script>
+            function testConfirm() {
+            var result = confirm("졸리면 확인, 아니면 취소")
+            // console.log(result);
+            var divEl = document.getElementById("area2");
+            if(result == true){
+                divEl.innerHTML = "<h3>정신 차려!</h3>"
+                //result 값이 true와 같으면 중괄호의 값을 실행,
+                //아니면 else의 값을 실행   (= 대입 / == 동등)
+            }else {
+                divEl.innerHTML = "<h3>진짜?ㅋㅋㅋ</h3>"
+            }
+        }
+        </script>
+    <br>
+    <hr>
+    <h3>window.prompt("질문내용");</h3>
+    <p>prompt 호출시 "질문내용"과 입력할 수 있는 "텍스트 상자"와 <br>
+        "확인/취소"버튼이 보여지는 알람창 발생 <br>
+    - 확인버튼 클릭시 텍스트 상자에 입력되어 있는 값이 문자열로 반환 <br>
+        (아무리 숫자가 써있어도 문자열로 반환) <br>
+    - 취소 버튼 클릭시 null을 반환 <br> 
+        (글자입력을 했어도 취소를 누르면 무조건 null)
+    
+    </p>
+    <button onclick="testPrompt1()">발작버튼</button>
+    <div id="area3"></div>
+
+    <script>
+        function testPrompt1() {
+        var name = prompt("니 이름?")
+        var age = prompt("니 나이?")
+        
+        var divEl = document.getElementById("area3");
+        divEl.innerHTML = "<b>엇.. 니가 바로" + age + "살" + name + "님이군요?</b>"
+        }
+    </script>
 
 
+    <br>
+        <button onclick="testprompt2()">숫자입력</button>
+        <ul id="area4">
 
-    </body>
+        </ul>
+    <script>
+        function testprompt2() {
+            //num의 갯수만큼 반복문을 돌려 <li> 만들기 
+            var num = prompt("숫자만 입력")
+            
+            var str = "";
+            for(var i=1; i<=num; i++){
+                str += "<li>목록" + i + "</li>"
+            }
+            var ulEl = document.getElementById("area4");
+            ulEl.innerHTML = str;
+            
+        }
+
+    </script>
+
+
+    <hr>
+    <h3>3_ 선택한 인풋 요소.value</h3>
+        아이디 : <input type="text" id="userId"> <br>
+        비밀번호 : <input type="password" id="userPwd"> <br>
+        <button onclick="testInput()">클릭</button>
+        <br>
+        <input type="text" id="area5">
+        
+    <script>
+        function testInput() {
+            var input1 = document.getElementById("userId");
+            var input2 = document.getElementById("userPwd");
+         //console.dir(input1); 
+            
+            //클릭 버튼을 누르면 input1, input2의 값이 출력되도록
+            var input3 = document.getElementById("area5");
+            input3.value = input1.value + "," + input2.value
+
+            // 클릭버튼을 누르면 각각의 아이디, 비밀번호 인풋창 초기화 하고 싶다면?
+            input1.value= "";
+            input2.value= "";
+        }
+    </script>
+
+    <hr>
+    <h2>JS 반복문</h2>
+    <pre>
+반복문 표현법 
+(for문) : 특정 횟수나 범위만큼 반복하는 문
+ ㄴ for(초기식; 조건식; 증감식){
+    - 초기식: 변수의 선언
+    - 조건식: 반복을 수행할지 안할지 조건을 판단하는 구문
+    - 증감식: 변수를 증가하거나 감소시키는 구문
+  => 위 3개의 값을 가지고 반복 횟수를 결정 }
+    </pre>
+
+    <button onclick="loop()">반복문 테스트</button>
+    <script>
+        function loop() {
+            for(var i = 1; i <= 5; i++) {
+                // console.log("안녕달봉아");
+                console.log(i);
+            }
+        }
+    </script>
+
+</body>
 </html>
