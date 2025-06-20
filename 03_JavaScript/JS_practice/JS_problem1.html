@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제1</title>
+     <style>
+     
+  </style>
+
+
+</head>
+
+<body>
+    <h1>행 열 각각 입력받아 테이블 만들기</h1>
+    <h3>힌트 : 반복문은 자바랑 같습니다. 다만! 변수만 var 데이터형 이라는걸 기억해주세요.</h3>
+    <button onclick="table()">테이블 생성</button>
+    <table id="table1" ></table>
+    <script>
+        function table() {
+            var garo = prompt("몇 행을 추가하겠습니까?")
+            var sero = prompt("몇 열을 추가하겠습니까?")
+            var str = "<table boder='1'>"
+                
+            for(var i=1; i<=garo; i++){
+                str += "<tr></tr>"
+                for(var j=1; j<=sero; j++){
+                str += "<th></th>"};
+            }
+            var tableEl = document.getElementById("table1");
+            document.tableEl("<table border='1'>")
+            tableEl.innerHTML = str;
+        }
+    </script>
+    <!-- <hr>
+    <h1>행 열을 각각 입력받아서 새 화면에서 출력하기</h1>
+    <h3>힌트 : document.write{}를 이용하여 표를 출력하면 됩니다.</h3>
+    <button onclick="table2()">테이블 새화면 생성</button>
+    <script>
+        function table2() {
+            var garo = prompt("몇 행을 추가하겠습니까?")
+            var sero = prompt("몇 열을 추가하겠습니까?")
+        }
+
+    </script> -->
+    
+
+
+
+
+ <!-- 반복문
+//      for(var i=1; i<=n; i++) 
+//     coument.write(i)
+    
+//     +
+//     var ? prompt("text~~")-->
+
+
+    
+</body>
+</html>
