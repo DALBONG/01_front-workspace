@@ -1,6 +1,54 @@
+/* 헤더 영역 */
 header{
     position: fixed;
     width: 100%;
     height: 15%;
-    z-index:9999;
+    z-index: 3;
+    margin-left: 20px;
+    margin-top: 20px;
 }
+#home{
+    position: relative;
+    z-index: 4;
+}
+#dalbong{
+    position: absolute; left: 30px;
+    z-index: 5;
+}
+
+/* 메인 영역 */
+.main_lp{
+    /* position: fixed; */
+    right: -25%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#lp{
+    width: 100%;
+    height: 100%;
+    animation: spin 8s linear infinite;
+    position: relative;
+    z-index: 1;
+}
+#tonearm{
+    position: absolute; 
+    width: 70%; height: 70;
+    z-index: 2;
+}
+
+@keyframes spin{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+/* 프로필 영역 */
+
+
+
+/* 프로젝트 영역 */
+
+
+
+/* 각오 영역 */
