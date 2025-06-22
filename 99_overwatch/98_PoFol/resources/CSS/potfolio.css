@@ -1,8 +1,13 @@
-div{border: 1px solid red;
+div{
+    /* border: 1px solid red; */
     box-sizing: border-box;}
 .warp{
     width: 100vw;
     height: 100vh;}
+p{color: rgb(255, 153, 0);}
+hr{border: none;
+    height: 2px;
+    background-color: rgb(255, 153, 0) ;}
 
 /* 헤더 영역 */
 header{
@@ -21,6 +26,24 @@ header{
     position: absolute; left: 30px;
     z-index: 5;
 }
+/* 달봉아 산책 가자*/
+/* @keyframes moveaway{
+    from{transform: translateX(0px);}
+    to{transform: translateX(50px);}
+}
+.header_image{
+    height: 400vh;
+    scroll-timeline: --dalbong-scroll block;
+}
+#dalbong{
+    animation: moveAway linear;
+    animation-timeline: --dalbong-scroll;
+    animation-duration: 10s;
+    position: sticky;
+    top: 20px
+} */
+
+
 
 /* 메인 영역 */
 .main_lp{
@@ -73,7 +96,7 @@ header{
     padding-left: 20px;
     text-align: center;
 }
-p{font-family: 'Ownglyph_ParkDaHyun';}
+p, li{font-family: 'Ownglyph_ParkDaHyun';}
 @font-face {
     font-family: 'Ownglyph_ParkDaHyun';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
@@ -83,7 +106,7 @@ p{font-family: 'Ownglyph_ParkDaHyun';}
 .main_button{
     display: flex;
     justify-content: space-around;
-    padding-top: 10px;
+    padding-top: 3px;
     font-size: 30px;
 }
 .main_warp .main_button .btn{
@@ -93,16 +116,84 @@ p{font-family: 'Ownglyph_ParkDaHyun';}
     background-repeat: no-repeat;
     width: 80px;
 }
-
-
-
+#text_pro{transform: translateX(-4px);}
+#text_gako{transform: translateX(8px);}
+a{text-decoration: none;
+    color: inherit;}
 
 /* 프로필 영역 */
-
-
+.warp>.profile_warp{
+    width: 100vw; height: 100vh;
+}
+.profilebar{
+    width: 100vw; height: 25%;
+}
+.leftbar, .mainbar, .rightbar{
+    height: 75%;
+    float: left;
+}
+.leftbar, .rightbar{
+    width: 10%;
+}
+.mainbar{
+    width: 80%;
+}
+.profilebar>p{
+    font-size: 10vh;
+    text-align: center;
+    padding-top: 15vh;
+}
+li{font-size: 7vh;
+    color: rgb(113, 89, 57);
+    margin-bottom: 10px;
+    }
 
 /* 프로젝트 영역 */
-
-
+.warp>.project_warp{
+    width: 100vw; height: 100vh;
+}
+.projectbar{
+    width: 100vw; height: 25%;
+}
+.leftbar, .list{
+    height: 75%;
+    float: left;
+}
+.list{width: 80%; height: 15%;
+    display: flex;
+    justify-content: space-between;}
+.projectbar>p{
+    font-size: 10vh;
+    text-align: center;
+    padding-top: 15vh;
+}
+.list>p{font-size: 7vh;
+    color: rgb(113, 89, 57);
+    text-align: left;
+    padding-top: 2.5%;
+    }
+.list img{height: 14vh;
+    padding-top: 2px;}
+.img2{padding-right: 10px;}
+.img3{height: 17vh;}
 
 /* 각오 영역 */
+.warp>.gako_warp{
+    width: 100vw; height: 100vh;
+}
+.gakobar{
+    width: 100vw; height: 25%;
+}
+.leftbar, .mainbar{
+    height: 75%;
+}
+.gakobar>p{
+    font-size: 10vh;
+    text-align: center;
+    padding-top: 15vh;
+}
+.mainbar>p{font-size: 7vh;
+    color: rgb(113, 89, 57);
+    text-align: left;
+    padding-top: 2.5%;
+    }
