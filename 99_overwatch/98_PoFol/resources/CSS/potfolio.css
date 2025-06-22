@@ -48,7 +48,7 @@ header{
     margin-top: 20px;
     top: 1%;
     right: 10%;
-    width: 30vw; height: 40vw;
+    width: 30vw; height: 40vh;
     z-index: 2;
 }
 
@@ -70,6 +70,7 @@ header{
 }
 .sigText{
     padding-top: 30%;
+    padding-left: 20px;
     text-align: center;
 }
 p{font-family: 'Ownglyph_ParkDaHyun';}
@@ -79,6 +80,20 @@ p{font-family: 'Ownglyph_ParkDaHyun';}
     font-weight: normal;
     font-style: normal;
 }
+.main_button{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    font-size: 30px;
+}
+.main_warp .main_button .btn{
+    background-image: url("../image/playicon.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80px;
+}
+
 
 
 
