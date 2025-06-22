@@ -1,3 +1,9 @@
+div{border: 1px solid red;
+    box-sizing: border-box;}
+.warp{
+    width: 100vw;
+    height: 100vh;}
+
 /* 헤더 영역 */
 header{
     position: fixed;
@@ -18,23 +24,31 @@ header{
 
 /* 메인 영역 */
 .main_lp{
-    /* position: fixed; */
-    right: -25%;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    top: 0;
+    right: 0;
+    width: 32vw;
+    height: 99vh;
     overflow: hidden;
+    z-index: 0;
 }
 
 #lp{
-    width: 100%;
-    height: 100%;
+    left: 0;
+    transform: translateY(50%);
+    width: 200%;
+    height: auto;
     animation: spin 8s linear infinite;
-    position: relative;
     z-index: 1;
 }
 #tonearm{
-    position: absolute; 
-    width: 70%; height: 70;
+    position: absolute;
+    margin-top: 20px;
+    top: 1%;
+    right: 10%;
+    width: 30vw; height: 40vw;
     z-index: 2;
 }
 
@@ -42,6 +56,31 @@ header{
     from{transform: rotate(0deg);}
     to{transform: rotate(360deg);}
 }
+
+.warp>.main_warp{
+    width: 100vw; height: 100vh;
+}
+.main_signature{
+    width: 50%;
+    height: 80%;
+}
+.main_button{
+    width: 50%;
+    height: 20%;
+}
+.sigText{
+    padding-top: 30%;
+    text-align: center;
+}
+p{font-family: 'Ownglyph_ParkDaHyun';}
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 /* 프로필 영역 */
 
