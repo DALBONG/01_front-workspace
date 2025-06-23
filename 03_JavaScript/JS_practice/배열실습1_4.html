@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열실습1~4</title>
+    <style>
+        .area{border: 1px solid black;
+            }
+        .small{height: 20px;}
+
+    </style>
+
+</head>
+
+    <body>
+        <h1>배열 실습 문제1</h1>
+        <p>다음 보기에 있는 데이터들을 배열로 받고 하나의 배열로 합쳐보세요. <br>
+        이 때 입력 필드에 배열에 있는 데이터를 전송하면 배열의 alert를 통하여
+        배열의 위치를 알려주고, 없으면 "존재하지 않습니다"를 알려주면 됩니다.</p>
+        <fieldset>
+            <legend>보기</legend>
+            사과,바나나,당근 <br>
+            김밥,치즈,떡볶이,햄버거 <br>
+            환타,사이다,콜라 <br>
+            고양이,강아지
+        </fieldset>
+        <input type="text" id="area textbox1">
+        <button onclick="Q1()">전송 및 처리</button>
+        <script>
+            function Q1(){
+                const input = document.getElementById("textbox1")
+
+                const arr1_1 = ["사과", "바나나", "당근"]
+                const arr1_2 = ["김밥", "치즈", "떡볶이", "햄버거"]
+                const arr1_3 = ["환타","사이다","콜라"]
+                const arr1_4 = ["고양이", "강아지"]
+
+                textbox1.input += arr1_1.concat(arr1_2, arr1_3, arr1_4)
+
+                
+                /*
+                
+                      = 
+                      id.alear = 
+                      if(index == -1) {
+                            id.alear += "존재하지 않습니다."
+                        }else{
+                            id.alear += 요소 + "는 배열 index" + index + "번째에 존재합니다"
+                        }   
+
+                    - 배열 합치기 
+                      id.innerHTML += arr1.concat(arr2, arr3)
+                */
+            }
+        </script>
+
+        <hr>
+        <br>
+        <h1>배열 실습 문제2</h1>
+        <p>다음 보기에 있는 문자열을 가지고 정답과 같이 만드세요.(별도의 문자열을 쓰면 안됨) <br>
+        그리고 출력 부분에 출력하도록 하면 됩니다. : 정답 "brlove"</p>
+        <fieldset>
+            <legend>보기</legend>
+            r b <br>
+            e v o l
+        </fieldset>
+
+        <div id="area2" class="area small"></div>
+        <button onclick="testInput()">처리</button>
+        <script>
+            function testInput() {
+                const div = document.getElementById("area2");
+
+                const arr1 = ["r", "b"]
+                const arr2 = ["e", "v", "o", "l"]
+
+                /*
+                const r_arr1 = area2.innerHTML + arr1.reverse().Join(" ");
+                const r_arr2 = area2.innerHTML += arr2.reverse().Join(" ")
+                */
+                const r_arr1 = area2.innerHTML + arr1.reverse()
+                const r_arr2 = area2.innerHTML += arr2.reverse()
+                /*
+                div.innerHTML = r_arr1 + r_arr2
+                
+                const j_arr1 = area2.innerHTML + r_arr1.Join(" ")
+                const j_arr2 = area2.innerHTML += r_arr2.Join(" ")
+                /*
+                div.innerHTML = j_arr1 + j_arr2 
+                */
+                div.innerHTML = j_arr1
+            }
+        </script>
+        <hr>
+
+        <h1>배열 실습 문제3</h1>
+        <p>문자열을 여러 개 입력 받은 후 출력 버튼 클릭시 <br>
+            입력했던 모든 문자열이 출력되도록 만드세요. <br>
+            ex. 개구리->입력,  바나나->입력,  복숭아->입력 <br>
+            출력 : 개구리,바나나,복숭아</p>
+            <fieldset>
+                <legend>입력</legend>
+                <input type="text" id="input_text">
+                <button onclick="inputText()">입력</button>
+            </fieldset>
+            
+            <div id="area3" class="area small"></div>
+            <button onclick="outputText()">출력</button>
+
+        <script>
+            function inputText(){
+               const input = document.getElementById("#input_text")
+               for(let i in input){
+                input_text.innerHTML += input[i]
+               }
+
+
+               //출력
+                // const output = document.getElementById("area3")
+                //output = 
+
+            }
+        </script>
+            
+        
+        
+        
+
+    </body>
+</html>
