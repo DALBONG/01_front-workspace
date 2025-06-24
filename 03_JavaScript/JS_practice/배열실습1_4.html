@@ -145,23 +145,21 @@
                 function foodList(){
                     const fList = ["피자", "치킨", "당근", "햄버거", "떡볶이"]
                         //제거할 요소 인풋 박스
-                    const splice = document.getElementById("splicefood")
+                    const splice = document.getElementById("splicefood").value
+
+                    const indexSf = fList.indexOf(splice)
+                    if(indexSf !== -1){
+                        fList.splice(indexSf, 1)
+                    }
                         //추가할 요소 인풋 박스
-                    const push = document.getElementById("pushfood")
-                        //제거 코드
-                    const sf = splice.value
-                    splice.innerHTML = fList.slice(sf)
-                        //추가 코드
-                    const pf = push.value
-                    push.innerHTML = fList.push(pf)
+                    const push = document.getElementById("pushfood").value
+                    // const indexPf = fList.indexOf(push)
+                    if(push !== ""){
+                        fList.push(push)
+                    }
                         //결과값 출력 박스
-                    const food = document.getElementById("area4")
-                    food = sf + pf 
-                    
+                    document.getElementById("area4").innerHTML = fList.join(" ")
                 }
-
-                //02데이터입출력 : 출력코드 input3.value = input1.value + "," + input2.value
-
             </script>
         
         
