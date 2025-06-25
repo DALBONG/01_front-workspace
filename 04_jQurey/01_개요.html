@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>j쿼리 개요</title>
+    <!-- <script src="resources/jquery-3.7.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        h5{color: red;}
+    </style>
+    
+</head>
+
+    <body>
+        <h1>jQuery개요</h1>
+        <h3>jQuery란?</h3>
+        <p>기존 자바스크립트 언어 만으로 구현하기에 복잡한 구문 작성들을 <br>
+        간소화 하기 위해 "존 래식"에 의해 만들어짐. <br>
+        JavaScript 기반 라이브러리(유용한 기능 모음집) <br>
+        즉, JavaScript 언어로 유용한 함수나 내용들이 이미 정의되어있는 모음집 <br>
+        <br>
+        복잡한 자바스크립트 구문을 보다 짧고, 쉽게 개발 가능 <br>
+        (적은 양의 코드로 빠르고, 풍부한 기능 제공) <br><br>
+
+        <h5>* 장점 :</h5>
+        1_ DOM 요소 => HTML태그들..과 관련된 스크립트를 보다 쉽게 구현 가능. <br>
+        2_ AJAX(비동기 통신), 이벤트 처리 등.. 폭 넓게 지원. <br>
+        3_ jQuery와 관련된 특성상 플러그인, 모든 ap
+        </p>
+
+        <h3>jQuery 라이브러리 연결 방법</h3>
+        <p>
+        head 태그 내 script 태그로 외부 jQuery관련한 .js파일을 연동   <br>
+        오프라인 / 온라인 방식 있음 <br>
+        
+        - jQuery 공식 사이트 : 
+        <a href="https://jquery.com" target="_blank"></a>
+            1. jQuery 라이브러리 직접 다운로드 받은 후 경로 지정 (오프라인) <br>
+            <!-- UnCompressed(개발자 전용) - 일반 JS파일
+                개발자들이 보기 쉽도록 주석, 코드 등.. 정렬이 유지되어있음.
+                가시성을 유지하는 파일로, 가독성 좋음. 
+                
+                Compressed(배포전용) - min JS파일
+                주석, 띄어쓰기 등.. 최소화하여 파일의 용량을 줄여서 제공.-->
+            2. CDN방식 (온라인) : ContentDelieveryNetwork 방식 <br>
+            - 파일을 받아 저장할 필요X, 라이브러리를 제공하는 사이트 url 제시해서 파일 경로 지정.
+        </p>
+        <br>
+        <hr>
+        <h3>*jquery 구문 작성하기</h3>
+        <p>
+            <b>
+                jQuery 구문으로 DOM요소를 다루는 구문은 <br>
+                문서상의 요소들이 다 만들어 진 후 실행되어야 함 <br>
+                <br>
+                > 순수 자바스크립트에서는
+                <pre>
+window.onload = function(){
+실행내용; 
+}
+JS에서의 window.onload구문은 해당 문서 요소들이 다 로드되고 
++ 외부문서들(css파일)도 다 가지고 온 뒤에 실행 됨. 
+그리고, 이 구문은 해당 문서에서 단 한번만 작성 가능(마지막것 반영)
+
+해당 문서의 요소들만 다 로드되면 곧바로 실행 됨. 
++ 여러번 기술 가능함.(제한X) -> 순서대로 실행 
+                </pre>
+            > jQuery에서의 해당 내용은 3가지 구문으로 제공.
+            <pre>
+1. jQuery(document).ready(function(){
+    //실행내용
+})
+
+2. $(document).ready(function(){
+    //실행내용
+})
+
+3. $(function(){
+    //실행내용
+})
+            </pre>
+            </b>
+        </p>
+        <script>
+            window.onload = function(){
+                console.log("화면 다 로딩된 후 이 구문 실행")
+            }
+
+
+            window.onload = function(){ // 얘만 실행 됨.
+                console.log("화면 다 로딩된 후 이 구문 실행2")
+            }
+            
+            jQuery(document).ready(function(){
+                console.log("구문실행1")
+            })
+
+            $(document).ready(function(){
+                console.log("구문실행2")
+            })
+            $(function(){
+                console.log("구문실행3")
+
+                //h3 요소 선택해서 배경색 노란색으로 변경
+                    // 순수 자바스크립트로.
+/*
+                const h3Arr = document.getElementsByTagName("h3"); // [배열에 담김]
+                // h3Arr.style.backgroundColor = "yellow" (배열에 담겨, 실행X)
+                for(let index in h3Arr){
+                    h3Arr[i].style.backgroundColor = "yellow"
+                }
+*/
+
+                // jQuery 방식
+                $("h3").css("backgroundColor","yellow")
+                    // 내부적으로 반복문이 돌아가게 함.
+                    // $("선택자") : 해당 요소 선택.
+                    // .css() : 선택한 요소들의 스타일과 관련된 기능 수행
+
+                $("#test").css("Color","pink")
+            })
+        </script>
+
+        <div id="test">안녕달봉아</div>
+
+    </body>
+</html>

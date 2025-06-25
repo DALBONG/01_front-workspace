@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+        .area{background-color: rgb(245, 245, 245);
+                height: 100px;
+                border: 1px solid palegreen;}
+        h3{color: red;}
+    </style>
+
+</head>
+
+    <body>
+        <h1>이벤트</h1>
+        <br>
+        <h3>고전 이벤트 모델</h3>
+        <p>어떤 특성 요소 객체를 가지고와서 해당 요소의 이벤트 속성에 접근한 후,<br>
+        이벤트 핸들러(function)를 연결하는 방식 <br>
+        이벤트를 제거할 수도 있음
+        </p>
+        <!-- 요소 내부에 직접적으로 이벤트 속성 기술 X -->
+        <button id="btn1">실행확인</button>
+        <button id="btn2">실행확인</button>
+        <div id="area1" class="area"></div>
+        <script>
+            const dal1 = document.getElementById("area1")
+            // const bong1 = document.getElementById("btn1")
+            // bong1.onclick = function(){     //요소에 대입되는 함수 방식 : 고전 이벤트 모델
+
+            // {}로 출력되면 객체,  [ ] 로 출력되면 배열
+
+            document.getElementById("btn1").onclick = function(){
+                dal1.innerHTML += "btn1이 클릭 됨. <br>"
+            }
+            document.getElementById("btn2").onclick = function(){
+                dal1.innerHTML += "btn2 클릭되면서 btn1 이벤트 제거 됨 <br>"
+                document.getElementById("btn1").onclick = null;
+            }
+        </script>
+        <br>
+        <hr>
+        
+        <h3>인라인 이벤트 모델(하던거)</h3>
+        <p>요소 내부에 직접적으로 이벤트 속성을 제시해서 실행할 내용을 정의하는 방식 <br>
+            주로 script 태그 내에 정의되어있는 함수 를 호출하는 방식으로 주로 사용.
+        </p>
+        
+        <button onclick="document.getElementById('area2').innerHTML += '첫번째 버튼 클릭<br>'">실행확인</button>
+        <button onclick="test1()">실행확인</button>
+        
+        <div id="area2" class="area"></div>
+        <script>
+            function test1(){
+                document.getElementById("area2").innerHTML +="두번째 버튼 클릭<br>"
+            }
+        </script>
+
+        <br>
+        <hr>
+
+        <h3>표준 이벤트 모델(addEventListener)</h3>
+            <!-- 브라우저에 따라 되다 안되다 함. -->
+        <p>w3c에서 공식적으로 지정한 이벤트 모델 <br>
+            IE는 9버전 부터 지원.</p>
+
+            <!-- 요소 내부에 직접적으로 이벤트 속성 기술 X -->
+        <button id="btn3">실행확인</button>
+        <div id="area3" class="area"></div>
+        <script>
+            const dal3 = document.getElementById("btn3")
+                // addEventListener("이벤트명", 이벤트 핸들러(이벤트 발생시 실행할 함수))
+                    // 이벤트명 : onclick x --> click
+            dal3.addEventListener("click", function(){
+                alert("표준 이벤트 모델 테스트")
+            })
+            dal3.addEventListener("mouseenter", function(){
+                dal3.style.backgroundColor = "silver";
+            })
+            dal3.addEventListener("mouseout", function(){
+                dal3.style.backgroundColor = "gold"
+            })
+                // 이 두 이벤트가 결합된 것 : hover
+        </script>
+
+        <br>
+        <hr>
+
+        <h2>2. 현재 이벤트가 발생한 해당요소 객체에 접근하는 법</h2>
+        <button id="btn4">고전이벤방식</button>
+        <button id="btn5">표준이벤방식</button>
+        <button onclick="test3(this)">인라인이벤방식</button> 
+
+        <script>
+            // 고전 이벤 방식
+            document.getElementById("btn4").onclick = function(e){
+                console.log(e)
+                console.log(window.event) // 매개변수 'e'를 넘기기 싫으면 이 방법으로
+                    //현재 이벤트가 발생한 요소 객체에 접근하고자 한다면
+                console.log(e.target)
+                console.log(window.event.target)
+                console.log(this) // 현재 이벤트가 발생한 그, 요소
+                
+                e.target.innerHTML = "버튼클릭 됨"
+                window.event.target.style.backgroundColor = "red"
+                this.style.console = "yellow"
+            }
+
+            // 표준 이벤 방식
+            document.getElementById("btn5").addEventListener("click", function(e){  //이벤트 핸들러
+                console.log(e.target)  
+                console.log(window.event.target)
+                console.log(this)
+            })
+
+            // 인라인 이벤 방식
+            function test2(e){
+                // console.log(e) --> 넘겨받은 이벤트가 없기에 undefined 반환
+                console.log(window.event.target)
+                console.log(this) // window 객체를 가리킴
+            }
+
+            function test3(el){
+                el.style.backgroundColor = "gold"
+            }
+        </script>
+
+        <br>
+        <hr>
+
+        <h2>3. 태그별 기본적으로 가지고 있는 이벤트 제거</h2>
+        <p>기본적으로 이벤트를 가지고 있는 요소 <br>
+        - a 태그 : 클릭시 href에 제시되어있는 url로 요청하는 기본 인벤트 보유.
+        - form 태그 내의 submit : 클릭시 사용자가 입력한 값을 action에 제시되어 있는 url로 제출, 요청하는 기본 이벤트 보유
+        <br>
+        <br>
+        태그 내 기본적으로 설정되어 있는 이벤트가 실행 안되게끔 막고싶을 때
+          ==> 이벤트 핸들러의 return 값을 false로 
+         </p>
+
+        <!-- <a onclick="alert('kddk')" href="https://www.naver.com/">네이버로 이동</a> -->
+            <!-- 기본 이벤트가 있는 요소에 다시 이벤트 속성 부여시, 현재 이 코드가 먼저 실행. -->
+        <a onclick="alert('kddk'); return false" href="https://www.naver.com/">네이버로 이동</a>
+        <br> 
+        <a href="https://www.google.com/?hl=ko" onclick="return test4()">구글로 이동</a>
+        <script>
+            function test4(){
+                alert('히호호');
+                return false  // 기본이벤트로 retun false 간 것이 아니라, 보낸 곳으로 돌아간 것이기에, test4 앞에 retur붙여줘야 함
+            }
+        </script>
+        <hr>
+
+        <form action="test.do" method="get">
+            아이디 : <input type="text" name="userId" id="userId"> <br>
+            비밀번호 : <input type="password" name="userPwd" id="userPwd"> <br>
+            비밀번호 확인 : <input type="password" id="checkPwd">
+            
+            <br>
+            <br>
+            <input type="submit" onclick="return validate()">
+        </form>
+            <!--기본 이벤트가 수행되기 전 비번/확인 맞는 거-->
+
+            <script>
+                function validate(){
+                    const userPwd = document.getElementById("userPwd").value
+                    const checkPwd = document.getElementById("checkPwd").value
+                    // 두개의 비밀번호가 일치하지 않을 경우, 알람창 출력 / 제출 안되게 기본이벤트 막기
+
+                    // Id에 대한 유효성 검사. (영문자 or 숫자로만 5~12 맞는지 확인)
+                        // ==> 맞지 않을경우 알람창 출력 / 제출 불가(기본 이벤트 막기)
+                    const userId = document.getElementById("userId").value
+                    /*
+                    if(userId.length >= 5 && userId.length <= 12){   // && : 그리고
+                                    // ==> 글자 수가 맞았을 경우.
+                        
+                        //각각의 문자들이 영문 or 숫자로만 이뤄져 있는지 체크
+                        for(let i=0; i<userId.length; i++){
+                            if(userId.charAt(i) >= 0 && userId.charAt(i) < 10  // || : 또는
+                            || userId.charAt(i) >= 'a' && userId.chatAt(i) <= 'z' 
+                            || userId.chatAt(i) >= 'A' && userId. chatAt(1) <= 'Z'){
+                                
+                            }else{ // id가 숫자, 영문으로만 이루어진게 아닐 때 
+                                alert("아이디 형식이 유효하지 않음")
+                                return false;
+                            }
+                        }
+                    }else{ //글자 수 못맞출 경우
+                        alert("아이디 형식이 맞지 않음")
+                        return false;
+                    }
+                    */
+
+                    // *정규 표현식
+                    const regExp = /^[a-zA-Z0-9]{5,12}$/  // ^==시작, $==끝
+                                                          // a~z, A~Z, 0~9
+                    if(!regExp.test(userId)){   // ! : 유효하지 않은 ID 입력했을 경우, 유효하게
+                        alert("유효한 아이디의 형식이 아님, 다시 입력해!")
+
+                        document.getElementById("userId").select()
+                        return false;
+                    }
+                    if(userPwd !== checkPwd){// ! 붙여서, 같지 않으면 
+                        alert("비밀번호 일치 안함")
+                        return false;
+                    }
+                }
+
+
+            </script>
+    </body>
+</html>
