@@ -65,7 +65,9 @@
             e v o l
         </fieldset>
 
-        <div id="area2" class="area"></div>
+        <div id="area2" class="area">
+
+        </div>
         <button onclick="testInput()">처리</button>
         <script>
             function testInput() {
@@ -78,17 +80,19 @@
                 const r_arr1 = area2.innerHTML + arr1.reverse().Join(" ");
                 const r_arr2 = area2.innerHTML += arr2.reverse().Join(" ")
                 */
-                const r_arr1 = area2.innerHTML + arr1.reverse()
-                const r_arr2 = area2.innerHTML += arr2.reverse()
-                /*
-                div.innerHTML = r_arr1 + r_arr2
+                arr1.reverse()
+                arr2.reverse();
+
+                //console.log(arr1)
                 
-                const j_arr1 = area2.innerHTML + r_arr1.Join(" ")
-                const j_arr2 = area2.innerHTML += r_arr2.Join(" ")
-                /*
-                div.innerHTML = j_arr1 + j_arr2 
-                */
-                div.innerHTML = j_arr1
+                //div.innerHTML = r_arr1 + r_arr2
+                
+                area2.innerHTML = arr1.join("")
+                area2.innerHTML += arr2.join("")
+                
+                //div.innerHTML = j_arr1 + j_arr2 
+               
+                //div.innerHTML = j_arr1
             }
         </script>
         <hr>
