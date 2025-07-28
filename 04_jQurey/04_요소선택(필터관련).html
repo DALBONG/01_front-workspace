@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+    <h3>*  필터 관련 선택자</h3>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>혈액형</th>
+            <th>거주지</th>
+        </tr>        
+
+        <tr>
+            <td>차웅우</td>
+            <td>A</td>
+            <td>서울</td>
+        </tr>
+        <tr>
+            <td>박보현</td>
+            <td>B</td>
+            <td>경기</td>
+        </tr>
+        <tr>
+            <td>조승원</td>
+            <td>O</td>
+            <td>부산</td>
+        </tr>
+        <tr>
+            <th colspan="2">총원</th>
+            <td>3명</td>
+        </tr>
+
+    </table>
+
+<script>
+    $(function(){
+        $("tr:first").css("backgroundColor","gray").css("color","white");
+        $("tr:last").css({backgroudColor: "red", color:"white"});
+
+    // 짝수번째
+        $("tr:even").css("backgroundColor", "lightgray");
+        $("tr:odd").css("backgroundColor", "yellow");    
+    })
+
+
+</script>
+
+
+<hr>
+
+<h3>    * 필터링과 관련된 메소드</h3>
+<p>
+    기준이 되는 요소중 특정 요소만을 걸러 선택해주는 메소드
+    first last filter eq
+</p>
+
+<h4 class="test">test-1</h4>
+<h4 class="test">test-2</h4>
+<h4 class="test">test-3</h4>
+<h4 class="test">test-4</h4>
+<h4>test-5</h4>
+<h4 class="test">test-6</h4>
+
+<script>
+    $(function(){
+        $("h4").first().css("fontSize", "20px");
+        $("h4").last().css("fontSize", "15px");
+        $("h4").filter(".test").html("무엇인가");
+        $("h4").not(".test").css("color","gold");
+        //3번째 것만 
+        $("h4").eq(2).text("eq로 선택").css("color","blue");
+
+    })
+
+</script>
+
+    
+</body>
+</html>
