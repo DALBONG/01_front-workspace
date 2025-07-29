@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <h2>게시판 리스트</h2>
+    <table border="1" class="table table-sm">
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>조회수</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>5번 제목</td>
+                <td>zxljkv</td>
+                <td>800</td>
+                <td>2025-07-09</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>4번 제목</td>
+                <td>gjkfk</td>
+                <td>700</td>
+                <td>2025-07-07</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>3번 글 제목</td>
+                <td>gibi</td>
+                <td>759</td>
+                <td>2025-07-04</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>2번 글 제목</td>
+                <td>mull</td>
+                <td>832</td>
+                <td>2025-07-02</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>1번 글 제목</td>
+                <td>admin</td>
+                <td>850</td>
+                <td>2025-07-01</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+<br><br>
+
+    선택된 게시글 정보 : 
+    <span id="s1">글번호</span> / 
+    <span id="s2">제목</span>   /
+    <span id="s3">작성자</span> /
+    <span id="s4">조회수</span> /
+    <span id="s5">작성일</span> 
+
+<script>
+    $(function(){
+        $("tbody>tr").click(function(){
+            //글 번호만 뽑아 콘솔에 찍기
+            //console.log($(this).children().eq(0).text());
+            //console.log($(this).children().eq(1).text());
+            //console.log($(this).children().eq(2).text());
+            //현재 클릭이벤트가 발생한 해당 tr요소의 자손들 td에
+            
+            $(this).children().each(function(index, el){
+                    // 인덱스 : 순차적으로 접근되는 배열의 숫자
+                    // el : 순차적으로 접근되는 요소 객체 (td)
+                console.log($(el).text());
+
+            $("#s" + index).text($(el).text());
+
+            });
+
+            // 상세 조회용 url호출
+            location.href = "detail.do>no=" + $(this).children().eq(0).text();
+            
+        })
+
+    })
+
+</script>
+
+<br><br>
+<a class="btn btn btn-outline-secondary" href="https://www.w3schools.com/bootstrap4">w3s</a>
+<button class="btn btn-outline-primary">로그인</button>
+<button class="btn btn-outline-info">정보</button>
+
+
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  클릭
+</button>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">로그인 중..</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="email">ID:</label>
+                <input type="email" class="form-control" placeholder="Enter ID" id="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">제출</button>
+            </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>

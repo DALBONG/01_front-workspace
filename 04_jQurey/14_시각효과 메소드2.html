@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h3>fadeIn | fadeOut | fadeToggle</h3>
+    <p style="background-color: rgb(255, 0, 0); opacity: 0.5;">선택 요소가 점점 투명해지면서 사라지고, 선명해지며 보여지게 함</p>
+
+    <button id="test1">숨기기</button>
+    <button id="test2">보이기</button>
+    <button id="test3">토오글</button>
+    <br>
+    <img id="test4" src="https://cdnweb01.wikitree.co.kr/webdata/editor/202009/19/img_20200919103249_df84941e.webp" alt="">
+    <img id="test5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiQC6X1IDENy6rbUzL-LAeafidHq2-V8w2QQ&s" alt="">
+
+<script>
+    $(function(){
+
+        $("#test1").click(function(){
+            $("#test4").fadeOut(1500);
+            $("#test5").fadeOut(1500);
+        })
+
+        $("#test2").click(function(){
+            $("#test4").fadeIn(1500);
+        })
+
+        $("#test3").click(function(){
+            $("#test4").fadeToggle(1500);
+            $("#test5").fadeToggle(1500);
+        })
+
+    })
+
+</script>
+
+    
+</body>
+</html>

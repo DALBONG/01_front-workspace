@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+    
+    <h1>시각효과 메소드</h1>
+    <p>페이지 내에 애니메이션 효과를 주기 위해 사용되는 메소드</p>
+    <h3>* show | hide | toggle </h3>
+
+    <p>선택된 요소가 점점 커지면서 보여지고, 작아지면서 사라지게 하는 메소드</p>
+
+    <button id="hide">숨기기</button>
+    <button id="show">보여주기</button>
+    <button id="toggle">토글</button>
+<br>
+
+<img id="test" src="https://i.namu.wiki/i/8dGsCBfEbo_raXvMheBc4kmblgSDXJatOG9z04qin1Urp7bH7tDY2UhO0vx2I6B2udXJGj8EEmSFxVVI3N3Vxw.webp" alt="">
+
+<script>
+    $(function(){
+        $("#hide").click(function(){
+            $("#test").hide(1500);
+        })
+
+        $("#show").click(function(){
+            $("#test").show(1500);
+        })
+
+        $("#toggle").click(function(){
+            $("#test").toggle(1500);
+        })
+        
+
+    })
+
+</script>
+
+    
+</body>
+</html>

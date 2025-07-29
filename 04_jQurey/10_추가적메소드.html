@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .highlight-0{background-color: rgb(255, 186, 186);}
+        .highlight-1{background-color: rgb(255, 210, 126);}
+        .highlight-2{background-color: rgb(255, 255, 193);}
+        .highlight-3{background-color: rgb(193, 255, 193);}
+        .highlight-4{background-color: rgb(210, 210, 255);}
+        
+    </style>
+
+
+</head>
+
+<body>
+
+    <h3>* each 메소드</h3>
+    <p>
+        배열에 모든 인덱스에 순차적으로 접근하고자 할 때<br>
+        객체가 가지고 있는 모든 속성에 순차적으로 접근하고자 할 때  <br>
+        사용하는 for in문과 유사하게 수행되는 메소드
+    </p>
+
+    <pre>
+        1. $.each(객체 | 배열, function([매개변수1, 매개변수2]){
+                순차적 접근할 때마다 실행할 내용;
+           });
+
+        2. 객체 | 배열.each(function([매개변수1, 매개변수2]){
+                순차적 접근할 때마다 실행할 내용;
+           })
+
+        * 객체 제시시
+         - 첫째 매개변수에는 순차적으로 접근할 때마다 속성명(키)이 담김
+         - 둘째 매개변수에는 해당 속성값(밸류)이 담김
+
+        * 배열 제시시
+         - 첫째 매개변수에는 순차적으로 접근할 때마다 인덱스 수가 담김
+         - 둘째 매개변수에는 해당 인덱스 값이 담김
+
+        => for in 문은 인덱스 값을 알 수 X, 인덱스 수만 알 수 있음
+
+    </pre>
+
+<script>
+    $(function(){
+        const arr = ["동", "방", "신", "기"];
+
+        // for in문
+        for(let index in arr){
+            console.log("인덱스 : " + index + ", 값 : " + arr[index]);
+        }
+        console.log("-------------------------------");
+
+        // each문 1
+        $.each(arr, function(index, value){
+            console.log("인덱스 : " + index + ", 값 : " + value);
+        })
+        console.log("-------------------------------");
+
+        // each문 2
+        $(arr).each(function(index, value){
+            console.log("인덱스 : " + index + ", 값 : " + value);
+            // arr은 순수 JS로 배열을 만듦, 이 배열로 jQuery 제공하는 메소드를 함께 쓸 수 없음.
+            // 오류가 나는 항목이 있다면 jQuery로 변환해서 사용. 
+            // (arr을 jQuery로 변환) --> 오류가 나는부분을 괄호 후 $붙이기 $(arr)
+
+        })
+        console.log("-------------------------------");
+
+        const student = {
+            name : "차응우",
+            age : 22,
+            address : "군대"
+        }
+        // 1. for in문 활용
+        for(let key in student){
+            //console.log("속성명 : " + key + ", 속성 값 : " + student.key);
+            // student 객체에 key라는 속성 명을 찾고있음
+            console.log("속성명 : " + key + ", 속성 값 : " + student[key])
+        }
+        console.log("-------------------------------");
+
+        // 2. each문 1
+        $.each(student, function(key, value){
+            console.log("속성명 : " + key + ", 속성 값 : " + value);
+        });
+
+        $("#btn").click(function(){
+            // db로부터 받은 데이터라 가정.
+            const student = [{name : "박부영", age : 30, address : "서울"},
+                             {name : "강화늘", age : 30, address : "마산"},
+                             {name : "차옹우", age : 23, address : "군대"}]
+
+            let result = "";
+            $.each(student, function(index, obj){
+                result += "<tr>"
+                            + "<td>" + obj.name + "</td>"
+                            + "<td>" + obj.age + "</td>"
+                            + "<td>" + obj.address + "</td>"
+                        + "</tr>";
+            });
+            console.log(result);
+            $("#area1 tbody").html(result);
+
+        })
+
+    });
+
+</script>
+
+<button id="btn">학생조회</button>
+<br><br>
+
+<table id="area1" border="1">
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+</table>
+
+<br><br>
+<hr>
+
+    <div id="area2">
+        <h1>item-1</h1>
+        <h1>item-2</h1>
+        <h1>item-3</h1>
+        <h1>item-4</h1>
+        <h1>item-5</h1>
+
+    </div>
+
+<script>
+    $(function(){
+        // h1요소에 순차적으로 접근해서 다 다른 클래스에 부여해볼 것
+        $("#area2").children().each(function(index, el){//el : 순차적으로 접근된 h1요소
+            //console.log(el);
+        // "highligth-" + 인덱스 => 0, 1, 2, ... 
+        // el.addClass("highlight-" + index);  --> el이 JS방식으로 만든 요소객체가 담겨있기 때문
+
+        // -> 방식 1. JS방식 메소드 이용
+        //el.className = "highlight-" + index;
+
+        // -> 방식 2. JS를 jQuery 변환 후 
+        $(el).addClass("highlight-" + index);
+
+        // 방법 3. this활용 ** 치트키.
+            // $(this) :  순차적으로 접근되는 해당 요소 객체
+        $(this).addClass("highlight-" + index);
+
+        });
+    })
+
+</script>
+
+<hr>
+
+<h3>    * is 메소드</h3>
+    <p>
+        $("선택자").is("선택자") <br>
+        - 선택 요소가 내가 전달한 값과 일치하는지 판단해서 이에 해당하는 논리값(T/F) 반환
+    </p>
+
+    <h3 class="test">테스트1</h3>
+    <h3>테스트2</h3>
+    <h3 class="test">테스트3</h3>
+    <h3 class="test">테스트4</h3>
+    <h3>테스트5</h3>
+    <h3 class="test">테스트6</h3>
+
+    <script>
+        $(function(){
+            // 현재 문서상 존재하는 모든 h3요소에 순차적으로 접근하며, 
+            // H3요소에 TEST 클래스 존재할 시 배경색 변경. 
+            $("h3").each(function(){
+                if($(this).is(".test"))
+                    $(this).css("backgroundColor", "greenyellow");
+            })
+
+        })
+
+    </script>
+
+
+    
+</body>
+</html>

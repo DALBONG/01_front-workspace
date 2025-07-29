@@ -32,10 +32,10 @@
             //순수 JS방식
             //const tmp = document.getElementById("test1").innerHTML;
             const tmp = $("#test1").html();
-            console.log(tmp);
+            //console.log(tmp);
 
-            $("test2").html(tmp);
-            $("test2").children().attr("href", "https://www.naver.com");
+            $("#test2").html(tmp);
+            $("#test2").children().attr("href", "https://www.naver.com");
 
         })
 
@@ -62,7 +62,7 @@
             //const tmp = document.getElementById("test3").innerText;
 
             const tmp = $("#test3").text(); // == 구글로
-            //console.log(tmp);
+            console.log(tmp);
             
             $("#test4").text("<a>" + tmp + "</a>");
         })
@@ -78,26 +78,28 @@
 <script>
     $(function(){
         //순수 JS
-    /*
+/* 
         const arr = document.getElementsByClassName("test");
         for(i=0; i<arr.length; i++){
             arr[i].innerHTML = "kkk";
         }
-    */
+        console.log(".test".innerHTML);
+*/        
+    
         //$(".test").html("<h1>kkkk</h1>");
             //선택된 요소들에 순차적 접근할 때마다 function 실행 
-    /*
+
         let count = 0;
         $(".test").html(function(){
             return "<h4>kkk" + count++ + "</h4>"
         });
         // 함수 실행시 return된 값으로 문구 변경 (콜백 함수)
             // : 함수 실행후 반환된 결과값을 가지고 반영
-    */
+/*
         $(".test").html(function(index, html){
             return "<h3> 인덱스 : " + index + ", content 내용 : " + html + "</h3>" 
         })
-        // 해당 function이 호출될 때마다 첫째 인자값으로는 순차적으로 접근하는 요소의 인덱스 수 전달
+*/        // 해당 function이 호출될 때마다 첫째 인자값으로는 순차적으로 접근하는 요소의 인덱스 수 전달
         // 두번째 인자값으로는 순차적으로 접근하는 요소의 컨텐츠 영역 값(innerHTML 속성 값)
 
     })

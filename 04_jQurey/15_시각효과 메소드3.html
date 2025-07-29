@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        div{
+            background-color: rgb(255, 255, 174);
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        p{
+            border: 1px solid rgba(202, 191, 191, 0.877);
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h3> * slideDown | slideUp</h3>
+    
+    <div>Q. 돈은 왜 벌어야 할까요?</div>
+    <p>A. 벌어야 하기 때문입니다</p>
+
+    <div>Q. 일은 왜 해야 할까요?</div>
+    <p>A. 해야 하기 때문입니다</p>
+
+    <div>Q. 일은 안할 수 없을까요?</div>
+    <p>A. 안할 수 없습니다</p>
+
+    <div>Q. 뭐 하면서 살아야 할까요?</div>
+    <p>A. 하고싶은것 하면서 살면 됩니다</p>
+
+    <div>Q. 배는 왜 고파질까요?</div>
+    <p>A. 배가 있기 때문입니다</p>
+
+
+
+
+<script>
+    $(function(){
+ /*       
+        $("div").click(function(){
+            // $(this) : 클릭이벤트가 발생한 div 뒤의 요소를 선택해야 함. 
+            // $(this).next() : 클릭이벤트가 발생한 요소 뒤의 p요소 선택.
+                // 보여지는 상태면 사라지게, 안보이면 나타나게
+            const $p = $(this).next();  // jQuery방식으로 선택된 요소를 담아둘 때 앞에 $를 넣어주는 것이 일반적
+            if($p.css("display") == "none"){
+                //$p.css("display", "block");
+                $p.slideDown();
+            }else{
+                $p.slideUp();
+            }
+
+        })
+*/
+        $("div").click(function(){
+            // $(this) : 클릭이벤트가 발생한 div 뒤의 요소를 선택해야 함. 
+            // $(this).next() : 클릭이벤트가 발생한 요소 뒤의 p요소 선택.
+                // 보여지는 상태면 사라지게, 안보이면 나타나게
+            const $p = $(this).next();  // jQuery방식으로 선택된 요소를 담아둘 때 앞에 $를 넣어주는 것이 일반적
+            if($p.css("display") == "none"){
+                //$p.css("display", "block");
+
+                //기존것은 다 닫고, 지금 것만 열리게 
+                $(this).siblings("p").slideUp();
+                
+                $p.slideDown();
+            }else{
+                
+                $p.slideUp();
+            }
+
+            
+
+        })
+
+
+    })
+
+</script>
+    
+</body>
+</html>
